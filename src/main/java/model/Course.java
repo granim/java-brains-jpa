@@ -5,17 +5,17 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity // create table
-public class Topic {
+public class Course {
 
     @Id //set jpa Key and rows
     private String id;
     private String name;
     private String description;
 
-    public Topic(){
+    public Course(){
     }
 
-    public Topic(String id, String name, String description) {
+    public Course(String id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -49,8 +49,8 @@ public class Topic {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Topic topic = (Topic) o;
-        return Objects.equals(id, topic.id);
+        Course course = (Course) o;
+        return Objects.equals(id, course.id);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class Topic {
 
     @Override
     public String toString() {
-        return "Topic{" +
+        return "Course{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

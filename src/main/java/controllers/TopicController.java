@@ -1,39 +1,38 @@
 package controllers;
 
-import model.Topic;
-import model.TopicService;
+import model.Course;
+import model.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
 public class TopicController {
 
     @Autowired
-    private  TopicService topicService;
+    private CourseService topicService;
 
     @RequestMapping("/topics")
-    public List<Topic> getAllTopics(){
+    public List<Course> getAllTopics(){
         return topicService.getAllTopics();
     }
 
     //{} variable portion pass in a token
     @RequestMapping("/topics/{id}")
-    public Topic getTopic(@PathVariable() String id) {
+    public Course getTopic(@PathVariable() String id) {
         return topicService.getTopic(id);
     }
 
     //Specify method value .POST the default is .GET
     @RequestMapping(method = RequestMethod.POST, value = "/topics")
-    public void addTopic(@RequestBody Topic topic) {
-        topicService.addTopic(topic);
+    public void addTopic(@RequestBody Course course) {
+        topicService.addTopic(course);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
-    public void updateTopic(@RequestBody Topic topic,@PathVariable() String id) {
-        topicService.updateTopic(id, topic);
+    public void updateTopic(@RequestBody Course course, @PathVariable() String id) {
+        topicService.updateTopic(id, course);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
