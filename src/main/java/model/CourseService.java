@@ -13,39 +13,31 @@ import java.util.List;
 public class CourseService {
 
         @Autowired
-        private CourseRepository topicRepository;
+        private CourseRepository courseRepository;
 
-        public List<Course> getAllTopics(){
-           // return courses;
+        public List<Course> getAllCourses(String topicId){
             List<Course> courses = new ArrayList<>();
-             topicRepository.findAll()
+             courseRepository.findByTopicId(topicId)
                     .forEach(courses::add);
              return courses;
         }
 
-        public void addTopic(Course course) {
-            topicRepository.save(course);
+        public Course getCourse(String id) {
+            return courseRepository.findById(id).orElse(null);
+           // return returnCourse;
         }
 
-        public Course getTopic(String id) {
-            Course returnCourse = topicRepository.findById(id).orElse(null);
-            return returnCourse;
+        public void addCourse(Course course) {
+        courseRepository.save(course);
         }
 
-        public void updateTopic(String id, Course course) {
-       /*     for(int i = 0; i < topics.size(); i++) {
-                Course t = topics.get(i);
-                if(t.getId().equals(id)) {
-                    topics.set(i, course);
-                        return;
-                }
-            }*/
-            topicRepository.save(course);
+        public void updateCourse(Course course) {
+            courseRepository.save(course);
         }
 
-        public void deleteTopic(String id) {
+        public void deleteCourse(String id) {
            // topics.removeIf(t -> t.getId().equals(id));
-            topicRepository.deleteById(id);
+            courseRepository.deleteById(id);
     }
 }
 
