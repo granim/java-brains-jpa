@@ -22,12 +22,12 @@ public class CourseService {
              return courses;
         }
 
-        public List<Course> getAllCourseByDescirption(String name) {
+   /*     public List<Course> getAllCourseByDescirption(String name) {
             List<Course> courses = new ArrayList<>();
             courseRepository.findByCourseDescription(name)
                     .forEach(courses::add);
             return courses;
-        }
+        }*/
 
 
 

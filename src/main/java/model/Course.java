@@ -1,14 +1,13 @@
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity // create table
 public class Course {
 
     @Id //set jpa Key and rows
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String name;
     private String description;

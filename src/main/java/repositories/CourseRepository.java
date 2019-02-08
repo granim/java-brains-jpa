@@ -9,6 +9,6 @@ import java.util.List;
 public interface CourseRepository extends CrudRepository<Course, String> {
    //Find by property that is an object ie Topic then narrow down to a property of that object ie Id
      List<Course> findByTopicId(String topicId);
-    List<Course> findByCourseDescription(String name);
+ //   List<Course> findByCourseDescription(String name);
 
 }
