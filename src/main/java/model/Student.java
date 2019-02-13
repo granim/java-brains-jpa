@@ -8,13 +8,12 @@ import java.util.List;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private   String id;
     private   String name;
     private   String address;
 
-    @ManyToMany(mappedBy = "students")
-    private List<Course> courses = new ArrayList<>();
+
+ //   private List<Course> courses = new ArrayList<>();
 
     public Student() {
     }
