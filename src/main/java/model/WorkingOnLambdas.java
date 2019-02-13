@@ -2,37 +2,37 @@ package model;
 
 public class WorkingOnLambdas {
 
+    public static void main(String args[]) {
+        MathOperation multiplyTwo = (int a, int b) -> a * b;
 
+        MathOperation addFunction = (int a, int b) -> a + b;
 
-    public static void main(String[] args) {
-
-       MathOperation multiplyTwo = (int a, int b) -> a * b;
-
-       MathOperation addFunction = (int a, int b) -> a + b;
-
-       MathOperation safeDivideFunction = (int z, int x) -> {
+        MathOperation safeDivideFunction = (int z, int x) -> {
             if (x == 0) return 0;
-            return z/x;
+            return z / x;
         };
 
-       MathOperation zerOut = (int a, int b) -> a - b;
+        MathOperation zerOut = (int a, int b) -> a - b;
 
-      StringOperation stringLengthCount = (String s) -> s.length();
-      int letter = stringLengthCount.stringChecker("Hello");
+        StringOperation stringLengthCount = (String s) -> s.length();
+        int letter = stringLengthCount.stringChecker("Hello");
 
-      StringOperation stringTest = (String s) -> s.indexOf(0);
-      int firstChar =  stringTest.stringChecker("Hello");
 
-      int intial = 0;
-      intial = addFunction.operation(intial, 40);
-      intial = addFunction.operation(intial, 20);
+        StringsToChar stringTest = (String s) -> s.charAt(0);
+        char firstChar = stringTest.stringChecker("Hello");
 
-      intial = zerOut.operation(intial, intial);
-      System.out.println("THe intial int final number is: " + intial);
+        System.out.println(firstChar);
+
+
+        int intial = 0;
+        intial = addFunction.operation(intial, 40);
+        intial = addFunction.operation(intial, 20);
+
+        intial = zerOut.operation(intial, intial);
+        System.out.println("THe initial int final number is: " + intial);
 
     }
 
-    
     interface MathOperation {
         int operation(int a, int b);
     }
@@ -40,6 +40,12 @@ public class WorkingOnLambdas {
     interface StringOperation {
         int stringChecker(String s);
     }
+
+    interface StringsToChar {
+        char stringChecker(String s);
+    }
+
+
 
 
 
