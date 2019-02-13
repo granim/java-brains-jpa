@@ -6,9 +6,7 @@ public class WorkingOnLambdas {
 
     public static void main(String[] args) {
 
-        WorkingOnLambdas tester = new WorkingOnLambdas();
-
-       MathOperation multiply = (int a, int b) -> a * b;
+       MathOperation multiplyTwo = (int a, int b) -> a * b;
 
        MathOperation addFunction = (int a, int b) -> a + b;
 
@@ -17,19 +15,31 @@ public class WorkingOnLambdas {
             return z/x;
         };
 
-        StringOperation stringLengthCount = (String s) -> s.length();
+       MathOperation zerOut = (int a, int b) -> a - b;
+
+      StringOperation stringLengthCount = (String s) -> s.length();
+      int letter = stringLengthCount.stringChecker("Hello");
+
+      StringOperation stringTest = (String s) -> s.indexOf(0);
+      int firstChar =  stringTest.stringChecker("Hello");
+
+      int intial = 0;
+      intial = addFunction.operation(intial, 40);
+      intial = addFunction.operation(intial, 20);
+
+      intial = zerOut.operation(intial, intial);
+      System.out.println("THe intial int final number is: " + intial);
 
     }
 
+    
     interface MathOperation {
         int operation(int a, int b);
     }
 
     interface StringOperation {
-        int stringLength(String s); 
+        int stringChecker(String s);
     }
-
-
 
 
 
