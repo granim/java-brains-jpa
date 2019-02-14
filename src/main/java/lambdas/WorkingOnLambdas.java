@@ -1,12 +1,12 @@
-package model;
+package lambdas;
 
 public class WorkingOnLambdas {
 
     public static void main(String args[]) {
+
+       //lambda expressions
         MathOperation multiplyTwo = (int a, int b) -> a * b;
-
         MathOperation addFunction = (int a, int b) -> a + b;
-
         MathOperation safeDivideFunction = (int z, int x) -> {
             if (x == 0) return 0;
             return z / x;
@@ -14,11 +14,11 @@ public class WorkingOnLambdas {
 
         MathOperation zerOut = (int a, int b) -> a - b;
 
-        StringOperation stringLengthCount = (String s) -> s.length();
+        StringOperation stringLengthCount = s -> s.length();
         int letter = stringLengthCount.stringChecker("Hello");
 
 
-        StringsToChar stringTest = (String s) -> s.charAt(0);
+        StringsToChar stringTest = s -> s.charAt(0);
         char firstChar = stringTest.stringChecker("Hello");
 
         System.out.println(firstChar);
