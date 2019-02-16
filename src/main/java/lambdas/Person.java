@@ -42,11 +42,11 @@ public class Person implements Comparable {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-                '}';
+                ' ';
     }
 
     @Override
