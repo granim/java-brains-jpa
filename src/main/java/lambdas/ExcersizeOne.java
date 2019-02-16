@@ -41,11 +41,27 @@ public static void main(String[] args) {
     System.out.println(people);
 
     //Create a hashMap with FirstName Key and LastName Value
-    HashMap<String, String> NamesMap = new HashMap<>();
+    HashMap<String, String> NamesMap = new LinkedHashMap<>();
     for(Person personP: people) {
-        NamesMap.put(personP.getFirstName(), personP.getLastName());
+        NamesMap.put(personP.getLastName(), personP.getFirstName());
     }
-    System.out.println(NamesMap.get("z") + " NamesMap");
+    System.out.println(NamesMap.get("murph") + " NamesMap");
+
+    String fakeInput = "hale";
+
+    //Look thru HashMap to find the input lastName
+    for(String fName: NamesMap.keySet()) {
+        if(fName.contains(fakeInput)) {
+            System.out.println(NamesMap.get(fName) + " Print fakeInput");
+        }
+    }
+
+    //Traverse the entire HashMap
+    for(Map.Entry<String, String> entry: NamesMap.entrySet()) {
+        System.out.print(entry.getKey() + " ");
+        System.out.println(entry.getValue());
+    }
+
 
 
 
