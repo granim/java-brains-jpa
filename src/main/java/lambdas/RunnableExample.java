@@ -11,16 +11,14 @@ public class RunnableExample {
             }
         });
 
-
         myThread.start();
 
         Thread myLambdaThread = new Thread(() -> System.out.println("Printed inside lambda runnable"));
         myLambdaThread.start();
 
 
+
+
     }
-
-
-
 
 }

@@ -29,8 +29,6 @@ public class CourseService {
             return courses;
         }*/
 
-
-
         public Course getCourse(String id) {
             return courseRepository.findById(id).orElse(null);
            // return returnCourse;
